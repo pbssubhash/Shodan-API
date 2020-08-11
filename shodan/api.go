@@ -38,6 +38,7 @@ func (cred *Credential) Init() (*Response, *APIInfo) {
 		return &Response{"Failure", true}, nil
 	}
 	var respi *APIInfo
+	fmt.Println(res.Body)
 	err = json.NewDecoder(res.Body).Decode(&respi)
 	return &Response{"Success", false}, respi
 }
