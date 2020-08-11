@@ -19,11 +19,14 @@ type Location struct {
 	PostalCode  int    `json:"postal_code"`
 }
 type Host struct {
-	IP       string   `json:"ip_str"`
-	Org      string   `json:"org"`
-	Hostname []string `json:"hostnames"`
-	Port     int      `json:"port"`
-	Loc      Location `json:"location"`
+	OS           string   `json:"os"`
+	ISP          string   `json:"isp"`
+	hostname     []string `json:"hostnames"`
+	location     Location `json:"location"`
+	ip           int      `json:"ip_str"`
+	domains      []string `json:"domains"`
+	Port         int      `json:"port"`
+	Organisation string   `json:"org"`
 }
 
 type Matches struct {
