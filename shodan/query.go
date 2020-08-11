@@ -9,25 +9,21 @@ import (
 )
 
 type Location struct {
-	City        string `json:"city"`
-	RegionCode  string `json:"region_code"`
-	AreaCode    string `json:"area_code"`
-	Longitude   string `json:"longitude"`
-	Latitude    string `json:"latitude"`
-	CountryCode int    `json:"country_code3"`
-	CountryName string `json:"country_name"`
-	PostalCode  int    `json:"postal_code"`
+	City        string `json:"city,omitempty"`
+	RegionCode  string `json:"region_code,omitempty"`
+	AreaCode    string `json:"area_code,omitempty"`
+	Longitude   string `json:"longitude,omitempty"`
+	Latitude    string `json:"latitude,omitempty"`
+	CountryCode int    `json:"country_code3,omitempty"`
+	CountryName string `json:"country_name,omitempty"`
+	PostalCode  int    `json:"postal_code,omitempty"`
 }
 type Host struct {
-	OS           string   `json:"os"`
-	ISP          string   `json:"isp"`
-	hostname     []string `json:"hostnames"`
-	location     Location `json:"location"`
-	ip           int      `json:"ip_str"`
-	domains      []string `json:"domains"`
-	Port         int      `json:"port"`
-	Data         string   `json:"data"`
-	Organisation string   `json:"org"`
+	IP       string   `json:"ip_str"`
+	Org      string   `json:"org,omitempty"`
+	Hostname []string `json:"hostnames,omitempty"`
+	Port     int      `json:"port"`
+	Loc      Location `json:"location,omitempty"`
 }
 
 type Matches struct {
