@@ -31,9 +31,6 @@ func (cred *Credential) Init() (*Response, *APIInfo) {
 	body, err := ioutil.ReadAll(res.Body)
 	var tesl *APIInfo
 	json.Unmarshal([]byte(body), &tesl)
-	// if tesl.Unlocked == true {
-	// 	fmt.Print("Unlocked")
-	// }
 	if err != nil {
 		return &Response{"Failure", true}, nil
 	}
@@ -41,7 +38,6 @@ func (cred *Credential) Init() (*Response, *APIInfo) {
 }
 
 func Setup(apikey string, url string) (*Response, *APIInfo) {
-	// var creda *Credential
 	creda := Credential{Url: url, Key: apikey}
 	resp, keeda := creda.Init()
 	return resp, keeda

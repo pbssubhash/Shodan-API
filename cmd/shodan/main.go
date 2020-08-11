@@ -19,5 +19,5 @@ func main() {
 		return
 	}
 	resp, info := Shodan.Setup(*key, url)
-	fmt.Println(resp.Message, info)
+	fmt.Println(resp.Message, info.Unlocked)
 }
