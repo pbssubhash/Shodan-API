@@ -2,10 +2,17 @@ package main
 
 import (
 	"fmt"
+
+	Shodan "github.com/pbssubhash/Shodan-API/shodan"
 )
 
 func main() {
 	fmt.Println("[+] Welcome to Shodan GO Client [-]")
 	fmt.Println("[-] Built by zer0 p1k4chu for learning purposes. [-]")
-	shodan.Setup("")
+	const url = "https://api.shodan.io"
+	var key string
+	fmt.Print("Enter API Key >")
+	fmt.Scanln(&key)
+	resp := Shodan.Setup(key, url)
+	fmt.Println(resp.Message)
 }

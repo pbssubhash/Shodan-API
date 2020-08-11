@@ -31,11 +31,11 @@ func (cred *Credential) Init() *Response {
 	body, err := ioutil.ReadAll(res.Body)
 	var tesl APIInfo
 	json.Unmarshal([]byte(body), &tesl)
-	if tesl.Unlocked == true {
-		fmt.Print("Unlocked")
-	}
+	// if tesl.Unlocked == true {
+	// 	fmt.Print("Unlocked")
+	// }
 	if err != nil {
-		return &(Response{"Success", false})
+		return &(Response{"Failure", true})
 	}
 	return &(Response{"Success", false})
 }
