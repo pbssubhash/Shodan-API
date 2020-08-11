@@ -9,24 +9,24 @@ import (
 )
 
 type Location struct {
-	City        string `json:"city"`
-	RegionCode  string `json:"region_code"`
-	AreaCode    string `json:"area_code"`
-	Longitude   string `json:"longitude"`
-	Latitude    string `json:"latitude"`
-	CountryCode int    `json:"country_code3"`
-	CountryName string `json:"country_name"`
-	PostalCode  int    `json:"postal_code"`
+	City        string `json:"city,omitempty"`
+	RegionCode  string `json:"region_code,omitempty"`
+	AreaCode    string `json:"area_code,omitempty"`
+	Longitude   string `json:"longitude,omitempty"`
+	Latitude    string `json:"latitude,omitempty"`
+	CountryCode int    `json:"country_code3,omitempty"`
+	CountryName string `json:"country_name,omitempty"`
+	PostalCode  int    `json:"postal_code,omitempty"`
 }
 type Host struct {
-	OS           string   `json:"os"`
-	ISP          string   `json:"isp"`
-	hostname     []string `json:"hostnames"`
-	location     Location `json:"location"`
-	ip           int      `json:"ip_str"`
-	domains      []string `json:"domains"`
-	Port         int      `json:"port"`
-	Organisation string   `json:"org"`
+	OS           string   `json:"os,omitempty"`
+	ISP          string   `json:"isp,omitempty"`
+	hostname     []string `json:"hostnames,omitempty"`
+	location     Location `json:"location,omitempty"`
+	ip           int      `json:"ip_str,omitempty"`
+	domains      []string `json:"domains,omitempty"`
+	Port         int      `json:"port,omitempty"`
+	Organisation string   `json:"org,omitempty"`
 }
 
 type Matches struct {
