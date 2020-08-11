@@ -29,7 +29,7 @@ type APIInfo struct {
 func (cred *Credential) Init() (*Response, *APIInfo) {
 	res, err := http.Get(fmt.Sprintf("%s/api-info?key=%s", cred.Url, cred.Key))
 	body, err := ioutil.ReadAll(res.Body)
-	var tesl APIInfo
+	var tesl *APIInfo
 	json.Unmarshal([]byte(body), &tesl)
 	// if tesl.Unlocked == true {
 	// 	fmt.Print("Unlocked")
@@ -37,10 +37,7 @@ func (cred *Credential) Init() (*Response, *APIInfo) {
 	if err != nil {
 		return &Response{"Failure", true}, nil
 	}
-	var respi *APIInfo
-	fmt.Println(body)
-	err = json.NewDecoder(res.Body).Decode(&respi)
-	return &Response{"Success", false}, respi
+	return &Response{"Success", false}, tesl
 }
 
 func Setup(apikey string, url string) (*Response, *Credential, *APIInfo) {
