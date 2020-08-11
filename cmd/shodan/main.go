@@ -17,6 +17,6 @@ func main() {
 	if *key == "No" || *help == true {
 		flag.PrintDefaults()
 	}
-	resp, creda := Shodan.Setup(*key, url)
-	fmt.Println(resp.Message)
+	resp, _, keeda := Shodan.Setup(*key, url)
+	fmt.Println(resp.Message, keeda.Plan)
 }
