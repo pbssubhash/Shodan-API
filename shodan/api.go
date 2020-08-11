@@ -40,10 +40,9 @@ func (cred *Credential) Init() *Response {
 	return &(Response{"Success", false})
 }
 
-func Setup(apikey string, url string) *Response {
-	var Creda Credential
-	Creda = Credential{Url: url, Key: apikey}
-	resp := Creda.Init()
-	return resp
-
+func Setup(apikey string, url string) (*Response, *Credential) {
+	// var creda *Credential
+	creda := Credential{Url: url, Key: apikey}
+	resp := creda.Init()
+	return resp, &creda
 }
