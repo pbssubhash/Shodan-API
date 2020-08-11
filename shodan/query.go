@@ -39,6 +39,8 @@ func Important() {
 }
 
 func QueryShodan(query string, cred Credential) *Matches {
+	fmt.Println(cred.Url)
+	fmt.Println(cred.Key)
 	resp, err := http.Get(fmt.Sprintf("%s/shodan/host/search?key=%s&query=%s", cred.Url, cred.Key, query))
 	if err != nil {
 		log.Fatal("Error-3")
