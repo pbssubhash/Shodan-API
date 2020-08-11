@@ -18,6 +18,6 @@ func main() {
 		flag.PrintDefaults()
 		return
 	}
-	resp, _, keeda := Shodan.Setup(*key, url)
-	fmt.Println(resp.Message, keeda)
+	resp, info := Shodan.Setup(*key, url)
+	fmt.Println(resp.Message, info)
 }

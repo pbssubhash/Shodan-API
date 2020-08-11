@@ -40,9 +40,9 @@ func (cred *Credential) Init() (*Response, *APIInfo) {
 	return &Response{"Success", false}, tesl
 }
 
-func Setup(apikey string, url string) (*Response, *Credential, *APIInfo) {
+func Setup(apikey string, url string) (*Response, *APIInfo) {
 	// var creda *Credential
 	creda := Credential{Url: url, Key: apikey}
 	resp, keeda := creda.Init()
-	return resp, &creda, keeda
+	return resp, keeda
 }
