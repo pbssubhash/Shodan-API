@@ -37,7 +37,7 @@ func (cred *Credential) Init() (*Credential, *APIInfo) {
 	return cred, tesl
 }
 
-func Setup(apikey string, url string) (*Response, *APIInfo) {
+func Setup(apikey string, url string) (*Credential, *APIInfo) {
 	creda := Credential{Url: url, Key: apikey}
 	resp, keeda := creda.Init()
 	return resp, keeda
