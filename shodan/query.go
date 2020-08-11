@@ -48,7 +48,7 @@ func QueryShodan(query string, cred Credential) *Matches {
 	if err != nil {
 		log.Fatal("Error-4")
 	}
-	err = json.Unmarshal(body, &tesl)
+	err = json.Unmarshal([]byte(body), &tesl)
 	if err != nil {
 		log.Fatal("Error")
 	}
