@@ -26,15 +26,15 @@ type APIInfo struct {
 	Unlocked     bool   `json:"unlocked"`
 }
 
-func (cred *Credential) Init() (*Response, *APIInfo) {
+func (cred *Credential) Init() (*Credential, *APIInfo) {
 	res, err := http.Get(fmt.Sprintf("%s/api-info?key=%s", cred.Url, cred.Key))
 	body, err := ioutil.ReadAll(res.Body)
 	var tesl *APIInfo
 	json.Unmarshal([]byte(body), &tesl)
 	if err != nil {
-		return &Response{"Failure", true}, nil
+		return nil, nil
 	}
-	return &Response{"Success", false}, tesl
+	return cred, tesl
 }
 
 func Setup(apikey string, url string) (*Response, *APIInfo) {

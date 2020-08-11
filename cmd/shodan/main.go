@@ -12,12 +12,13 @@ func main() {
 	fmt.Println("[-] Built by zer0 p1k4chu for learning purposes. [-]")
 	const url = "https://api.shodan.io"
 	key := flag.String("k", "NotPresent", "API Key for authenticating API requests.")
+	Query := flag.String("q", "Default", "Query Shodan. Eg: product:apache")
 	help := flag.Bool("h", false, "Print Help")
 	flag.Parse()
-	if *key == "NotPresent" || *help == true {
+	if *key == "NotPresent" || *help == true || *Query == "Default" {
 		flag.PrintDefaults()
 		return
 	}
-	resp, info := Shodan.Setup(*key, url)
-	fmt.Println(resp.Message, info.Unlocked)
+	cred, info := Shodan.Setup(*key, url)
+	Shodan.QueryShodan
 }
