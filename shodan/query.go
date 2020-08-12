@@ -45,7 +45,7 @@ func QueryShodan(query string, cred Credential) *Matches {
 	}
 	var tesm *Matches
 	body, err := ioutil.ReadAll(resp.Body)
-	fmt.Println(body)
+	fmt.Println(resp.Body)
 	if err != nil {
 		log.Fatal("Error-4")
 	}
