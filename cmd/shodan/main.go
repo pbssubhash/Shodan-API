@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"strconv"
 
 	Shodan "github.com/pbssubhash/Shodan-API/shodan"
 )
@@ -23,6 +24,6 @@ func main() {
 	var tesa *Shodan.Matches
 	tesa = Shodan.QueryShodan(*query, *cred)
 	for _, tesak := range tesa.Matches {
-		fmt.Print(tesak)
+		fmt.Println(fmt.Sprintf("%s:%s", tesak.IP, strconv.Itoa(tesak.Port)))
 	}
 }
