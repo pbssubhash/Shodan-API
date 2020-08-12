@@ -20,10 +20,10 @@ type Location struct {
 type Host struct {
 	OS           string   `json:"os,omitempty"`
 	ISP          string   `json:"isp,omitempty"`
-	hostname     []string `json:"hostnames,omitempty"`
-	location     Location `json:"location,omitempty"`
-	ip           int      `json:"ip_str,omitempty"`
-	domains      []string `json:"domains,omitempty"`
+	Hostname     []string `json:"hostnames,omitempty"`
+	Location     Location `json:"location,omitempty"`
+	IP           int      `json:"ip_str,omitempty"`
+	Domains      []string `json:"domains,omitempty"`
 	Port         int      `json:"port,omitempty"`
 	Organisation string   `json:"org,omitempty"`
 }
@@ -51,9 +51,6 @@ func QueryShodan(query string, cred Credential) *Matches {
 	err = json.NewDecoder(resp.Body).Decode(&tesm)
 	if err != nil {
 		log.Fatal("Error")
-	}
-	for resa := range tesm.Matches {
-		fmt.Println(resa)
 	}
 	return tesm
 }
