@@ -23,6 +23,6 @@ func main() {
 	tesa := new(Shodan.Matches)
 	tesa = Shodan.QueryShodan(*query, *cred)
 	for _, tesak := range tesa.Matches {
-		fmt.Print(tesak.ip)
+		fmt.Print(tesak.IP)
 	}
 }
