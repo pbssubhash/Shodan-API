@@ -22,7 +22,7 @@ type Host struct {
 	ISP          string   `json:"isp,omitempty"`
 	Hostname     []string `json:"hostnames,omitempty"`
 	Location     Location `json:"location,omitempty"`
-	IP           int      `json:"ip_str,omitempty"`
+	IP           string   `json:"ip_str,omitempty"`
 	Domains      []string `json:"domains,omitempty"`
 	Port         int      `json:"port,omitempty"`
 	Organisation string   `json:"org,omitempty"`
