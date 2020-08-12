@@ -20,7 +20,7 @@ func main() {
 		return
 	}
 	cred, _ := Shodan.Setup(*key, url)
-	tesa := new(Shodan.Matches)
+	var tesa Shodan.Matches
 	tesa = Shodan.QueryShodan(*query, *cred)
 	for _, tesak := range tesa.Matches {
 		fmt.Print(tesak.IP)
