@@ -36,13 +36,13 @@ func Important() {
 	fmt.Println("Important")
 }
 
-func QueryShodan(query string, cred Credential) *Matches {
+func QueryShodan(query string, cred Credential) Matches {
 	fmt.Println(fmt.Sprintf("%s/shodan/host/search?key=%s&query=%s", cred.Url, cred.Key, query))
 	resp, err := http.Get(fmt.Sprintf("%s/shodan/host/search?key=%s&query=%s", cred.Url, cred.Key, query))
 	if err != nil {
 		log.Fatal("Error-3")
 	}
-	var tesm *Matches
+	var tesm Matches
 	// body, err := ioutil.ReadAll(resp.Body)
 	// fmt.Println(resp.Status)
 	// if err != nil {
