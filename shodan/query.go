@@ -3,7 +3,6 @@ package Shodan
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"net/http"
 )
@@ -44,11 +43,11 @@ func QueryShodan(query string, cred Credential) *Matches {
 		log.Fatal("Error-3")
 	}
 	var tesm *Matches
-	body, err := ioutil.ReadAll(resp.Body)
-	fmt.Println(resp.Status)
-	if err != nil {
-		log.Fatal("Error-4")
-	}
+	// body, err := ioutil.ReadAll(resp.Body)
+	// fmt.Println(resp.Status)
+	// if err != nil {
+	// 	log.Fatal("Error-4")
+	// }
 	err = json.NewDecoder(resp.Body).Decode(&tesm)
 	if err != nil {
 		log.Fatal("Error")
