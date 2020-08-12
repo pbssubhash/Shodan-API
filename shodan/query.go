@@ -48,9 +48,9 @@ func QueryShodan(query string, cred Credential) Matches {
 	// if err != nil {
 	// 	log.Fatal("Error-4")
 	// }
-	err = json.NewDecoder(resp.Body).Decode(&tesm)
-	if err != nil {
-		log.Fatal("Error")
-	}
+	json.NewDecoder(resp.Body).Decode(&tesm)
+	// if err != nil {
+	// 	log.Fatal("Error")
+	// }
 	return tesm
 }
