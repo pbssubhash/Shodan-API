@@ -45,11 +45,11 @@ func QueryShodan(query string, cred Credential) *Matches {
 	}
 	var tesm *Matches
 	body, err := ioutil.ReadAll(resp.Body)
-	fmt.Println(resp.Body)
+	fmt.Println(resp.Status)
 	if err != nil {
 		log.Fatal("Error-4")
 	}
-	err = json.Unmarshal([]byte(body), &tesm)
+	err = json.NewDecoder(resp.Body).Decode(&tesm)
 	if err != nil {
 		log.Fatal("Error")
 	}
