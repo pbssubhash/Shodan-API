@@ -43,14 +43,14 @@ func QueryShodan(query string, cred Credential) *Matches {
 	if err != nil {
 		log.Fatal("Error-3")
 	}
-	var tesl *Matches
+	var tesm *Matches
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		log.Fatal("Error-4")
 	}
-	err = json.Unmarshal([]byte(body), &tesl)
+	err = json.Unmarshal([]byte(body), &tesm)
 	if err != nil {
 		log.Fatal("Error")
 	}
-	return tesl
+	return tesm
 }
