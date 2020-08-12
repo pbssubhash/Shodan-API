@@ -52,5 +52,8 @@ func QueryShodan(query string, cred Credential) *Matches {
 	if err != nil {
 		log.Fatal("Error")
 	}
+	for resa := range tesm.Matches {
+		fmt.Println(resa)
+	}
 	return tesm
 }
